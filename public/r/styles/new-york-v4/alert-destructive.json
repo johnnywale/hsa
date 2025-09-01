@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-destructive",
+  "type": "registry:example",
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/alert-destructive.tsx",
+      "content": "import { AlertCircleIcon } from \"lucide-react\"\r\n\r\nimport {\r\n  Alert,\r\n  AlertDescription,\r\n  AlertTitle,\r\n} from \"@/registry/new-york-v4/ui/alert\"\r\n\r\nexport default function AlertDestructive() {\r\n  return (\r\n    <Alert variant=\"destructive\">\r\n      <AlertCircleIcon />\r\n      <AlertTitle>Error</AlertTitle>\r\n      <AlertDescription>\r\n        Your session has expired. Please log in again.\r\n      </AlertDescription>\r\n    </Alert>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ]
+}

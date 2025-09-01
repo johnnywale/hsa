@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-10",
+  "type": "registry:block",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "description": "Today button",
+  "registryDependencies": [
+    "calendar",
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "blocks/calendar-10.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { Button } from \"@/registry/new-york/ui/button\"\r\nimport { Calendar } from \"@/registry/new-york/ui/calendar\"\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/registry/new-york/ui/card\"\r\n\r\nexport default function Calendar10() {\r\n  const [date, setDate] = React.useState<Date | undefined>(\r\n    new Date(2025, 5, 12)\r\n  )\r\n  const [month, setMonth] = React.useState<Date | undefined>(new Date())\r\n\r\n  return (\r\n    <Card>\r\n      <CardHeader className=\"relative\">\r\n        <CardTitle>Appointment</CardTitle>\r\n        <CardDescription>Find a date</CardDescription>\r\n        <Button\r\n          size=\"sm\"\r\n          variant=\"outline\"\r\n          className=\"absolute right-4 top-4\"\r\n          onClick={() => {\r\n            setMonth(new Date())\r\n            setDate(new Date())\r\n          }}\r\n        >\r\n          Today\r\n        </Button>\r\n      </CardHeader>\r\n      <CardContent>\r\n        <Calendar\r\n          mode=\"single\"\r\n          month={month}\r\n          onMonthChange={setMonth}\r\n          selected={date}\r\n          onSelect={setDate}\r\n          className=\"bg-transparent p-0\"\r\n        />\r\n      </CardContent>\r\n    </Card>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

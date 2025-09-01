@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-13",
+  "type": "registry:block",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "description": "With Month and Year Dropdown",
+  "registryDependencies": [
+    "calendar",
+    "label",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "blocks/calendar-13.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { Calendar } from \"@/registry/new-york/ui/calendar\"\r\nimport { Label } from \"@/registry/new-york/ui/label\"\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/new-york/ui/select\"\r\n\r\nexport default function Calendar13() {\r\n  const [dropdown, setDropdown] =\r\n    React.useState<React.ComponentProps<typeof Calendar>[\"captionLayout\"]>(\r\n      \"dropdown\"\r\n    )\r\n  const [date, setDate] = React.useState<Date | undefined>(\r\n    new Date(2025, 5, 12)\r\n  )\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-4\">\r\n      <Calendar\r\n        mode=\"single\"\r\n        defaultMonth={date}\r\n        selected={date}\r\n        onSelect={setDate}\r\n        captionLayout={dropdown}\r\n        className=\"rounded-lg border shadow-sm\"\r\n      />\r\n      <div className=\"flex flex-col gap-3\">\r\n        <Label htmlFor=\"dropdown\" className=\"px-1\">\r\n          Dropdown\r\n        </Label>\r\n        <Select\r\n          value={dropdown}\r\n          onValueChange={(value) =>\r\n            setDropdown(\r\n              value as React.ComponentProps<typeof Calendar>[\"captionLayout\"]\r\n            )\r\n          }\r\n        >\r\n          <SelectTrigger id=\"dropdown\" className=\"bg-background w-full\">\r\n            <SelectValue placeholder=\"Dropdown\" />\r\n          </SelectTrigger>\r\n          <SelectContent align=\"center\">\r\n            <SelectItem value=\"dropdown\">Month and Year</SelectItem>\r\n            <SelectItem value=\"dropdown-months\">Month Only</SelectItem>\r\n            <SelectItem value=\"dropdown-years\">Year Only</SelectItem>\r\n          </SelectContent>\r\n        </Select>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-21",
+  "type": "registry:block",
+  "description": "Custom days and formatters",
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/calendar-21.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { DateRange } from \"react-day-picker\"\r\n\r\nimport { Calendar, CalendarDayButton } from \"@/registry/new-york-v4/ui/calendar\"\r\n\r\nexport default function Calendar21() {\r\n  const [range, setRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(2025, 5, 12),\r\n    to: new Date(2025, 5, 17),\r\n  })\r\n\r\n  return (\r\n    <Calendar\r\n      mode=\"range\"\r\n      defaultMonth={range?.from}\r\n      selected={range}\r\n      onSelect={setRange}\r\n      numberOfMonths={1}\r\n      captionLayout=\"dropdown\"\r\n      className=\"rounded-lg border shadow-sm [--cell-size:--spacing(11)] md:[--cell-size:--spacing(13)]\"\r\n      formatters={{\r\n        formatMonthDropdown: (date) => {\r\n          return date.toLocaleString(\"default\", { month: \"long\" })\r\n        },\r\n      }}\r\n      components={{\r\n        DayButton: ({ children, modifiers, day, ...props }) => {\r\n          const isWeekend = day.date.getDay() === 0 || day.date.getDay() === 6\r\n\r\n          return (\r\n            <CalendarDayButton day={day} modifiers={modifiers} {...props}>\r\n              {children}\r\n              {!modifiers.outside && <span>{isWeekend ? \"$220\" : \"$100\"}</span>}\r\n            </CalendarDayButton>\r\n          )\r\n        },\r\n      }}\r\n    />\r\n  )\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

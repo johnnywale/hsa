@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-with-button",
+  "type": "registry:example",
+  "registryDependencies": [
+    "input",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/input-with-button.tsx",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\r\n\r\nexport default function InputWithButton() {\r\n  return (\r\n    <div className=\"flex w-full max-w-sm items-center gap-2\">\r\n      <Input type=\"email\" placeholder=\"Email\" />\r\n      <Button type=\"submit\" variant=\"outline\">\r\n        Subscribe\r\n      </Button>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ]
+}

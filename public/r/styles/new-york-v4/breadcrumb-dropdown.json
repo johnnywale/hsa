@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-dropdown",
+  "type": "registry:example",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/breadcrumb-dropdown.tsx",
+      "content": "import Link from \"next/link\"\r\nimport { ChevronDownIcon, SlashIcon } from \"lucide-react\"\r\n\r\nimport {\r\n  Breadcrumb,\r\n  BreadcrumbItem,\r\n  BreadcrumbLink,\r\n  BreadcrumbList,\r\n  BreadcrumbPage,\r\n  BreadcrumbSeparator,\r\n} from \"@/registry/new-york-v4/ui/breadcrumb\"\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger,\r\n} from \"@/registry/new-york-v4/ui/dropdown-menu\"\r\n\r\nexport default function BreadcrumbWithDropdown() {\r\n  return (\r\n    <Breadcrumb>\r\n      <BreadcrumbList>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbLink asChild>\r\n            <Link href=\"/\">Home</Link>\r\n          </BreadcrumbLink>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator>\r\n          <SlashIcon />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <DropdownMenu>\r\n            <DropdownMenuTrigger className=\"flex items-center gap-1 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5\">\r\n              Components\r\n              <ChevronDownIcon />\r\n            </DropdownMenuTrigger>\r\n            <DropdownMenuContent align=\"start\">\r\n              <DropdownMenuItem>Documentation</DropdownMenuItem>\r\n              <DropdownMenuItem>Themes</DropdownMenuItem>\r\n              <DropdownMenuItem>GitHub</DropdownMenuItem>\r\n            </DropdownMenuContent>\r\n          </DropdownMenu>\r\n        </BreadcrumbItem>\r\n        <BreadcrumbSeparator>\r\n          <SlashIcon />\r\n        </BreadcrumbSeparator>\r\n        <BreadcrumbItem>\r\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\r\n        </BreadcrumbItem>\r\n      </BreadcrumbList>\r\n    </Breadcrumb>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ]
+}

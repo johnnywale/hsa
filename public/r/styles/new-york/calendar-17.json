@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-17",
+  "type": "registry:block",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "description": "With time picker inline",
+  "registryDependencies": [
+    "calendar",
+    "card",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "blocks/calendar-17.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { Calendar } from \"@/registry/new-york/ui/calendar\"\r\nimport { Card, CardContent, CardFooter } from \"@/registry/new-york/ui/card\"\r\nimport { Input } from \"@/registry/new-york/ui/input\"\r\nimport { Label } from \"@/registry/new-york/ui/label\"\r\n\r\nexport default function Calendar17() {\r\n  const [date, setDate] = React.useState<Date | undefined>(\r\n    new Date(2025, 5, 12)\r\n  )\r\n\r\n  return (\r\n    <Card className=\"w-fit py-4\">\r\n      <CardContent className=\"px-4\">\r\n        <Calendar\r\n          mode=\"single\"\r\n          selected={date}\r\n          onSelect={setDate}\r\n          className=\"bg-transparent p-0 [--cell-size:2.8rem]\"\r\n        />\r\n      </CardContent>\r\n      <CardFooter className=\"*:[div]:w-full flex gap-2 border-t px-4 pb-0 pt-4\">\r\n        <div className=\"flex-1\">\r\n          <Label htmlFor=\"time-from\" className=\"sr-only\">\r\n            Start Time\r\n          </Label>\r\n          <Input\r\n            id=\"time-from\"\r\n            type=\"time\"\r\n            step=\"1\"\r\n            defaultValue=\"10:30:00\"\r\n            className=\"appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\r\n          />\r\n        </div>\r\n        <span>-</span>\r\n        <div className=\"flex-1\">\r\n          <Label htmlFor=\"time-to\" className=\"sr-only\">\r\n            End Time\r\n          </Label>\r\n          <Input\r\n            id=\"time-to\"\r\n            type=\"time\"\r\n            step=\"1\"\r\n            defaultValue=\"12:30:00\"\r\n            className=\"appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\r\n          />\r\n        </div>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

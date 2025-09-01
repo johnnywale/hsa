@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-with-button",
+  "type": "registry:example",
+  "registryDependencies": [
+    "textarea",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/textarea-with-button.tsx",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport { Textarea } from \"@/registry/new-york-v4/ui/textarea\"\r\n\r\nexport default function TextareaWithButton() {\r\n  return (\r\n    <div className=\"grid w-full gap-2\">\r\n      <Textarea placeholder=\"Type your message here.\" />\r\n      <Button>Send message</Button>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ]
+}

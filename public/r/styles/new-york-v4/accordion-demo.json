@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/accordion-demo.tsx",
+      "content": "import {\r\n  Accordion,\r\n  AccordionContent,\r\n  AccordionItem,\r\n  AccordionTrigger,\r\n} from \"@/registry/new-york-v4/ui/accordion\"\r\n\r\nexport default function AccordionDemo() {\r\n  return (\r\n    <Accordion\r\n      type=\"single\"\r\n      collapsible\r\n      className=\"w-full\"\r\n      defaultValue=\"item-1\"\r\n    >\r\n      <AccordionItem value=\"item-1\">\r\n        <AccordionTrigger>Product Information</AccordionTrigger>\r\n        <AccordionContent className=\"flex flex-col gap-4 text-balance\">\r\n          <p>\r\n            Our flagship product combines cutting-edge technology with sleek\r\n            design. Built with premium materials, it offers unparalleled\r\n            performance and reliability.\r\n          </p>\r\n          <p>\r\n            Key features include advanced processing capabilities, and an\r\n            intuitive user interface designed for both beginners and experts.\r\n          </p>\r\n        </AccordionContent>\r\n      </AccordionItem>\r\n      <AccordionItem value=\"item-2\">\r\n        <AccordionTrigger>Shipping Details</AccordionTrigger>\r\n        <AccordionContent className=\"flex flex-col gap-4 text-balance\">\r\n          <p>\r\n            We offer worldwide shipping through trusted courier partners.\r\n            Standard delivery takes 3-5 business days, while express shipping\r\n            ensures delivery within 1-2 business days.\r\n          </p>\r\n          <p>\r\n            All orders are carefully packaged and fully insured. Track your\r\n            shipment in real-time through our dedicated tracking portal.\r\n          </p>\r\n        </AccordionContent>\r\n      </AccordionItem>\r\n      <AccordionItem value=\"item-3\">\r\n        <AccordionTrigger>Return Policy</AccordionTrigger>\r\n        <AccordionContent className=\"flex flex-col gap-4 text-balance\">\r\n          <p>\r\n            We stand behind our products with a comprehensive 30-day return\r\n            policy. If you&apos;re not completely satisfied, simply return the\r\n            item in its original condition.\r\n          </p>\r\n          <p>\r\n            Our hassle-free return process includes free return shipping and\r\n            full refunds processed within 48 hours of receiving the returned\r\n            item.\r\n          </p>\r\n        </AccordionContent>\r\n      </AccordionItem>\r\n    </Accordion>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ]
+}

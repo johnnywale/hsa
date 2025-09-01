@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-11",
+  "type": "registry:block",
+  "description": "Start and end of month",
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/calendar-11.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { type DateRange } from \"react-day-picker\"\r\n\r\nimport { Calendar } from \"@/registry/new-york-v4/ui/calendar\"\r\n\r\nexport default function Calendar11() {\r\n  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(2025, 5, 17),\r\n    to: new Date(2025, 5, 20),\r\n  })\r\n\r\n  return (\r\n    <div className=\"flex min-w-0 flex-col gap-2\">\r\n      <Calendar\r\n        mode=\"range\"\r\n        selected={dateRange}\r\n        onSelect={setDateRange}\r\n        numberOfMonths={2}\r\n        startMonth={new Date(2025, 5, 1)}\r\n        endMonth={new Date(2025, 6, 31)}\r\n        disableNavigation\r\n        className=\"rounded-lg border shadow-sm\"\r\n      />\r\n      <div className=\"text-muted-foreground text-center text-xs\">\r\n        We are open in June and July only.\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start md:pt-20 justify-center min-w-0 xl:py-24",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

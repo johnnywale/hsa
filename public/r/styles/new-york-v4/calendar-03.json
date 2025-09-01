@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-03",
+  "type": "registry:block",
+  "description": "Multiple months with multiple selection.",
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/calendar-03.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\n\r\nimport { Calendar } from \"@/registry/new-york-v4/ui/calendar\"\r\n\r\nexport default function Calendar03() {\r\n  const [dates, setDates] = React.useState<Date[]>([\r\n    new Date(2025, 5, 12),\r\n    new Date(2025, 6, 24),\r\n  ])\r\n\r\n  return (\r\n    <Calendar\r\n      mode=\"multiple\"\r\n      numberOfMonths={2}\r\n      defaultMonth={dates[0]}\r\n      required\r\n      selected={dates}\r\n      onSelect={setDates}\r\n      max={5}\r\n      className=\"rounded-lg border shadow-sm\"\r\n    />\r\n  )\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

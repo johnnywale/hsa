@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-04",
+  "type": "registry:block",
+  "description": "Single month with range selection",
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/calendar-04.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { type DateRange } from \"react-day-picker\"\r\n\r\nimport { Calendar } from \"@/registry/new-york-v4/ui/calendar\"\r\n\r\nexport default function Calendar04() {\r\n  const [dateRange, setDateRange] = React.useState<DateRange | undefined>({\r\n    from: new Date(2025, 5, 9),\r\n    to: new Date(2025, 5, 26),\r\n  })\r\n\r\n  return (\r\n    <Calendar\r\n      mode=\"range\"\r\n      defaultMonth={dateRange?.from}\r\n      selected={dateRange}\r\n      onSelect={setDateRange}\r\n      className=\"rounded-lg border shadow-sm\"\r\n    />\r\n  )\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0 xl:pt-28",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-16",
+  "type": "registry:block",
+  "author": "shadcn (https://ui.shadcn.com)",
+  "description": "With time picker",
+  "registryDependencies": [
+    "calendar",
+    "card",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "blocks/calendar-16.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { Clock2Icon } from \"lucide-react\"\r\n\r\nimport { Calendar } from \"@/registry/new-york/ui/calendar\"\r\nimport { Card, CardContent, CardFooter } from \"@/registry/new-york/ui/card\"\r\nimport { Input } from \"@/registry/new-york/ui/input\"\r\nimport { Label } from \"@/registry/new-york/ui/label\"\r\n\r\nexport default function Calendar16() {\r\n  const [date, setDate] = React.useState<Date | undefined>(\r\n    new Date(2025, 5, 12)\r\n  )\r\n\r\n  return (\r\n    <Card className=\"w-fit py-4\">\r\n      <CardContent className=\"px-4\">\r\n        <Calendar\r\n          mode=\"single\"\r\n          selected={date}\r\n          onSelect={setDate}\r\n          className=\"bg-transparent p-0\"\r\n        />\r\n      </CardContent>\r\n      <CardFooter className=\"flex flex-col gap-6 border-t px-4 pb-0 pt-4\">\r\n        <div className=\"flex w-full flex-col gap-3\">\r\n          <Label htmlFor=\"time-from\">Start Time</Label>\r\n          <div className=\"relative flex w-full items-center gap-2\">\r\n            <Clock2Icon className=\"text-muted-foreground pointer-events-none absolute left-2.5 size-4 select-none\" />\r\n            <Input\r\n              id=\"time-from\"\r\n              type=\"time\"\r\n              step=\"1\"\r\n              defaultValue=\"10:30:00\"\r\n              className=\"appearance-none pl-8 [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\r\n            />\r\n          </div>\r\n        </div>\r\n        <div className=\"flex w-full flex-col gap-3\">\r\n          <Label htmlFor=\"time-to\">End Time</Label>\r\n          <div className=\"relative flex w-full items-center gap-2\">\r\n            <Clock2Icon className=\"text-muted-foreground pointer-events-none absolute left-2.5 size-4 select-none\" />\r\n            <Input\r\n              id=\"time-to\"\r\n              type=\"time\"\r\n              step=\"1\"\r\n              defaultValue=\"12:30:00\"\r\n              className=\"appearance-none pl-8 [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none\"\r\n            />\r\n          </div>\r\n        </div>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": ""
+    }
+  ],
+  "meta": {
+    "iframeHeight": "600px",
+    "container": "w-full bg-surface min-h-svh flex px-6 py-12 items-start justify-center min-w-0",
+    "mobile": "component"
+  },
+  "categories": [
+    "calendar",
+    "date"
+  ]
+}
