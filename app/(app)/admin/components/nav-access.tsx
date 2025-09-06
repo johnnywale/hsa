@@ -24,6 +24,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/registry/new-york-v4/ui/sidebar"
+import Link from "next/link";
 
 export function NavAccess({
                             items,
@@ -43,10 +44,10 @@ export function NavAccess({
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
+              <Link  href={item.url}>
                 <item.icon />
                 <span>{item.title}</span>
-              </a>
+              </Link >
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

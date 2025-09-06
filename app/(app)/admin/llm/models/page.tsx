@@ -1,8 +1,24 @@
-export default function modelsPage() {
-  return (
-    <div>
-      <h1>Models</h1>
-      <p>This is the models page.</p>
-    </div>
-  )
+"use client"
+
+import {DataTable} from "@/app/(app)/admin/components/data-table"
+import {schemas, schemaToColumns} from "@/lib/schema";
+
+export default function ChunksPage() {
+    const baseUrl = "/s3/v1/model"
+    const config = schemaToColumns(schemas.Model)
+    return (
+        <div className="flex flex-1 flex-col">
+            <div className="@container/main flex flex-1 flex-col gap-2">
+                <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+
+
+                    <DataTable data={[]}
+                               config={config}
+                               schema={schemas.Model}
+                               baseUrl={baseUrl}
+                    />
+                </div>
+            </div>
+        </div>
+    )
 }

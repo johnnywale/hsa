@@ -14,7 +14,9 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --log-level silent --write \"registry/**/*.{ts,tsx,json,mdx}\" --cache",
     "registry:capture": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/capture-registry.mts",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "release:static": "pnpm build && next export",
+    "openapi" : "openapi-zod-client openapi.yaml"
   },
   "overrides": {
     "react-is": "^19.1.1"
@@ -104,7 +106,8 @@
     "tailwind-merge": "^3.0.1",
     "ts-morph": "18.0.0",
     "vaul": "1.1.2",
-    "zod": "^3.24.1"
+    "zod": "^3.25.76",
+    "zod-openapi": "^5.4.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.27.1",
@@ -121,6 +124,7 @@
     "@typescript-eslint/parser": "^8.31.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "openapi-zod-client": "^1.18.3",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.11",
